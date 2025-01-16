@@ -1,0 +1,44 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> 
+    <meta name="mobile-web-app-capable" content="yes">   
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="con col-md-6 col-10 mx-auto  text-center">
+        <div class="col-12 col-md-10 mx-auto text-start p-3 row">
+            <form method="post" action="">
+                {% csrf_token %}
+            <div class="col-md-12 row">
+                <div class="col-6">
+                    <label for="type">Type <br></label><br>
+                    <select name="type" id="type">
+                        <option value="project">Project</option>
+                        <option value="publication">publications</option>
+                    </select><br><br>
+                </div>
+                <div class="col-6">
+                    <label for="title" >Title <br></label><br>
+                    <input type="text" required class="col-12" id="title" name="title"><br><br>
+                </div>
+            </div>
+                <label for="image">Image <br></label><br>
+                <input type="text" id="image" name="image"class="col-12" placeholder="enter image url"><br><br>
+                <label for="content">Content <br></label><br>
+                <textarea id="content" required name="content" class="col-12"></textarea><br>
+                <label for="summary" >Shot summary <br></label><br>
+                <input type="text" required class="col-12" id="summary" name="summary" placeholder="whith in two line"><br><br>
+
+                <input class="button " type="submit" value="publish">
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+</body>
+</html>
